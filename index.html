@@ -16,6 +16,42 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        html { scroll-behavior: smooth; }
+
+        /* Custom cursor (only for devices that support hover/pointer) */
+        @media (hover: hover) and (pointer: fine) {
+            html { cursor: none; }
+            #custom-cursor, #custom-cursor-follower {
+                position: fixed;
+                top: 0;
+                left: 0;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                z-index: 9999;
+                mix-blend-mode: normal;
+                transition: transform .12s ease, background .12s ease, opacity .12s ease;
+                opacity: 0.98;
+            }
+            /* inner dot */
+            #custom-cursor {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #fff;
+                box-shadow: 0 0 0 6px rgba(255,255,255,0.03), 0 0 8px rgba(59,130,246,0.08);
+            }
+            /* outer circle */
+            #custom-cursor-follower {
+                width: 56px;
+                height: 56px;
+                border-radius: 50%;
+                background: rgba(59,130,246,0.04);
+                border: 1px solid rgba(99,102,241,0.12);
+                transition: transform .18s cubic-bezier(.2,.9,.3,1), background .18s ease;
+            }
+            body.cursor-hover #custom-cursor { transform: translate(-50%, -50%) scale(1.15); background: #60a5fa; }
+            body.cursor-hover #custom-cursor-follower { transform: translate(-50%, -50%) scale(1.08); background: rgba(96,165,250,0.12); }
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans antialiased selection:bg-blue-600 selection:text-white">
@@ -24,7 +60,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0 font-bold text-xl tracking-tighter">
-                    DEV<span class="text-blue-500">.</span>PORTFOLIO
+                    HARSHIT<span class="text-blue-500">.</span>MISHRA
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
@@ -41,7 +77,8 @@
         </div>
     </nav>
 
-<section class="pt-40 pb-20 px-4 max-w-7xl mx-auto min-h-[70vh] flex flex-col justify-center">
+<section id="about" class="scroll-mt-24 py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <div class="max-w-4xl">
             <div class="flex flex-wrap gap-3 mb-6">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono">
@@ -75,6 +112,8 @@
             </div>
         </div>
     </section>
+ 
+
     <section id="experience" class="py-20 bg-gray-800/50 border-y border-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold mb-10 flex items-center">
@@ -195,25 +234,128 @@
     <section id="contact" class="py-20 bg-gray-800/40 border-t border-gray-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold mb-6">Contact</h2>
-            <p class="text-gray-300 mb-6">I'd love to hear from you. Reach out via email or phone:</p>
+            <p class="text-gray-300 mb-6">I'd love to hear from you. Reach out via email or phone — or copy them to your clipboard:</p>
 
-            <div class="flex flex-col sm:flex-row sm:items-center gap-4">
-                <a href="mailto:your-email@example.com" class="flex items-center gap-3 bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-100 px-4 py-3 rounded-lg">
-                    <span class="text-xl">📧</span>
-                    <span class="ml-2 font-medium">hm9011822@gmail.com</span>
-                </a>
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+                <div class="flex-1 flex items-center justify-between gap-4 bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-100 px-4 py-3 rounded-lg">
+                    <a href="mailto:hm9011822@gmail.com" class="flex items-center gap-3 flex-1" aria-label="Send email to hm9011822@gmail.com">
+                        <span class="text-xl">📧</span>
+                        <span class="ml-2 font-medium">hm9011822@gmail.com</span>
+                    </a>
+                    <div class="flex items-center gap-2">
+                        <button type="button" data-copy="hm9011822@gmail.com" class="copy-btn inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-200 px-3 py-2 rounded-md text-sm" aria-label="Copy email">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2"/></svg>
+                            Copy
+                        </button>
+                        <span class="copy-status text-green-400 text-sm opacity-0 transition-opacity" aria-hidden="true">Copied!</span>
+                    </div>
+                </div>
 
-                <a href="tel:+1234567890" class="flex items-center gap-3 bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-100 px-4 py-3 rounded-lg">
-                    <span class="text-xl">📞</span>
-                    <span class="ml-2 font-medium">+91 9173815758</span>
-                </a>
+                <div class="flex-1 flex items-center justify-between gap-4 bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-100 px-4 py-3 rounded-lg">
+                    <a href="tel:+919173815758" class="flex items-center gap-3 flex-1" aria-label="Call +91 9173815758">
+                        <span class="text-xl">📞</span>
+                        <span class="ml-2 font-medium">+91 9173815758</span>
+                    </a>
+                    <div class="flex items-center gap-2">
+                        <button type="button" data-copy="+91 9173815758" class="copy-btn inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-200 px-3 py-2 rounded-md text-sm" aria-label="Copy phone number">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l3 7-1.4 2.8A11.05 11.05 0 0014.2 21l2.8-1.4L20 21v2a1 1 0 01-1 1A19 19 0 013 5a1 1 0 011-1z"/></svg>
+                            Copy
+                        </button>
+                        <span class="copy-status text-green-400 text-sm opacity-0 transition-opacity" aria-hidden="true">Copied!</span>
+                    </div>
+                </div>
             </div>
+
+            <div id="copy-live" aria-live="polite" class="sr-only"></div>
         </div>
     </section>
 
     <footer class="py-10 border-t border-gray-800 text-center text-gray-500 text-sm">
         <p>&copy; 2024 Your Name. Built with Laravel Architecture Principles.</p>
     </footer>
+
+    <!-- custom cursor elements (inserted for non-touch devices) -->
+    <div id="custom-cursor" aria-hidden="true"></div>
+    <div id="custom-cursor-follower" aria-hidden="true"></div>
+
+    <script>
+        (function(){
+            const copyButtons = document.querySelectorAll('[data-copy]');
+            copyButtons.forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const text = btn.getAttribute('data-copy');
+                    try {
+                        await navigator.clipboard.writeText(text);
+                        const status = btn.parentElement.querySelector('.copy-status');
+                        if (status) {
+                            status.classList.remove('opacity-0');
+                            setTimeout(() => status.classList.add('opacity-0'), 2000);
+                        }
+                        const live = document.getElementById('copy-live');
+                        if (live) {
+                            live.textContent = 'Copied to clipboard';
+                            setTimeout(() => live.textContent = '', 2000);
+                        }
+                    } catch (err) {
+                        console.error('Copy failed', err);
+                    }
+                });
+            });
+        })();
+    </script>
+
+    <script>
+        (function(){
+            if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+            const cursor = document.getElementById('custom-cursor');
+            const follower = document.getElementById('custom-cursor-follower');
+            if (!cursor || !follower) return;
+
+            const followerRect = { w: 56, h: 56 };
+            const cursorRect = { w: 8, h: 8 };
+            const followerRadius = followerRect.w / 2;
+            const allowedInnerRadius = followerRadius - (cursorRect.w / 2) - 4; // padding
+
+            let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+            let posX = mouseX, posY = mouseY;
+
+            // position follower and cursor using left/top so CSS translate(-50%,-50%) keeps them centered
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function animate() {
+                // smooth follower to mouse
+                posX += (mouseX - posX) * 0.16;
+                posY += (mouseY - posY) * 0.16;
+
+                follower.style.left = posX + 'px';
+                follower.style.top = posY + 'px';
+
+                // compute inner dot offset toward the actual mouse position but constrained inside circle
+                const dx = mouseX - posX;
+                const dy = mouseY - posY;
+                const dist = Math.hypot(dx, dy) || 0.001;
+                const max = allowedInnerRadius;
+                const offsetDist = Math.min(dist, max);
+                const offsetX = (dx / dist) * offsetDist;
+                const offsetY = (dy / dist) * offsetDist;
+
+                cursor.style.left = (posX + offsetX) + 'px';
+                cursor.style.top = (posY + offsetY) + 'px';
+
+                requestAnimationFrame(animate);
+            }
+            requestAnimationFrame(animate);
+
+            const interactive = 'a, button, input, textarea, select, [role="button"], [data-copy]';
+            document.querySelectorAll(interactive).forEach(el => {
+                el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+                el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+            });
+        })();
+    </script>
 
 </body>
 </html>
