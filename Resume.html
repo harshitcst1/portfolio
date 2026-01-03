@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Harshit Mishra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @page {
+            margin: 0;
+            size: A4;
+        }
+        body {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        /* Specific print styles */
+        @media print {
+            body { padding: 0; background-color: white; }
+            .print-hidden { display: none; }
+            .page-container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                max-width: none;
+                min-height: 100vh;
+                border: none;
+            }
+            a { text-decoration: none !important; color: black; }
+        }
+    </style>
+</head>
+<body class="bg-gray-200 py-10 print:bg-white print:py-0 font-sans text-black">
+
+
+
+    <div class="page-container max-w-[210mm] mx-auto bg-white shadow-2xl overflow-hidden min-h-[297mm] flex flex-col relative px-12 py-12">
+        
+        <header class="border-b-4 border-black pb-8 mb-8">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-5xl font-extrabold tracking-tight uppercase mb-2">HARSHIT MISHRA</h1>
+                    <p class="text-xl font-medium tracking-widest uppercase mt-2">FULL-STACK DEVELOPER | B.Sc. IT</p>
+                </div>
+                <div class="text-right text-sm leading-relaxed font-medium">
+                    <p>Bhavnagar, Gujarat, India</p>
+                    <p>hm9011822@gmail.com</p>
+                    <p>+91 9173815758</p>
+                    <p><a href="https://github.com/harshitcst1" class="text-black no-underline">github.com/harshitcst1</a></p>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex-grow">
+
+            <section class="mb-8">
+                <h2 class="text-lg font-bold uppercase border-b-2 border-black mb-3 pb-1">Professional Summary</h2>
+                <p class="text-sm leading-relaxed text-justify">
+                    Full-Stack Developer with a B.Sc. IT background. I specialize in building and deploying production-ready Laravel applications. My focus is moving beyond theory to ship structured, maintainable backend systems that solve real business problems. Proven track record of taking projects from localhost to live production servers.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-lg font-bold uppercase border-b-2 border-black mb-4 pb-1">Technical Skills</h2>
+                <div class="grid grid-cols-3 gap-6 text-sm">
+                    <div>
+                        <span class="font-bold block mb-2">Backend Engineering</span>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>PHP & Laravel (Advanced)</li>
+                            <li>REST API Development</li>
+                            <li>MVC Architecture</li>
+                            <li>Authentication Systems</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="font-bold block mb-2">Database & Ops</span>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>MySQL (Schema Design)</li>
+                            <li>Database Normalization</li>
+                            <li>Linux (Kali/Ubuntu)</li>
+                            <li>Apache/Nginx Config</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="font-bold block mb-2">Frontend & Tools</span>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>HTML5 / CSS3 / Tailwind</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>Git & GitHub</li>
+                            <li>VS Code / Postman</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-lg font-bold uppercase border-b-2 border-black mb-6 pb-1">Live Production Projects</h2>
+
+                <div class="mb-6">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h3 class="font-bold text-lg">Maeind <span class="font-normal text-sm italic">- Business Service Platform</span></h3>
+                        <span class="text-xs font-bold border border-black px-2 py-0.5">LIVE PRODUCTION</span>
+                    </div>
+                    <a href="https://maeind.com" target="_blank" class="text-sm font-bold mb-2 block no-underline text-black">🌐 maeind.com</a>
+                    
+                    <ul class="list-disc list-inside text-sm space-y-1 ml-1">
+                        <li><strong>Architected Backend:</strong> Built complete Laravel backend from scratch, utilizing custom controllers and routes to manage dynamic service data.</li>
+                        <li><strong>Database Design:</strong> Engineered a normalized MySQL schema to handle complex relationships between services, categories, and user enquiries.</li>
+                        <li><strong>Security:</strong> Implemented secure authentication and validation middleware to protect admin dashboards.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h3 class="font-bold text-lg">Universal Exports <span class="font-normal text-sm italic">- Export Business Site</span></h3>
+                        <span class="text-xs font-bold border border-black px-2 py-0.5">LIVE PRODUCTION</span>
+                    </div>
+                    <a href="https://universalexportsbvn.in" target="_blank" class="text-sm font-bold mb-2 block no-underline text-black">🌐 universalexportsbvn.in</a>
+
+                    <ul class="list-disc list-inside text-sm space-y-1 ml-1">
+                        <li><strong>Scalable Architecture:</strong> Designed the system to handle international product listings and high-volume data queries efficiently.</li>
+                        <li><strong>CRUD Implementation:</strong> Developed a full content management system allowing non-technical staff to update inventory.</li>
+                        <li><strong>Performance:</strong> Optimized Eloquent queries to reduce load times by 40%.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="font-bold text-lg">RFID Attendance System <span class="font-normal text-sm italic">- IoT & Web</span></h3>
+                        <span class="text-xs font-bold border border-black px-2 py-0.5">PROJECT LEAD</span>
+                    </div>
+                    <p class="text-sm ml-1">
+                        Developed a web-based dashboard integrated with hardware sensors to track attendance in real-time without biometric dependencies. Bridged the gap between hardware data streams and web interfaces.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-lg font-bold uppercase border-b-2 border-black mb-4 pb-1">Education</h2>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-bold text-base">Bachelor of Science in Information Technology (B.Sc. IT)</h3>
+                        <p class="text-sm italic mt-1">Gyanmanjari Innovative University</p>
+                    </div>
+                    <span class="text-sm font-bold">Graduation: 2028</span>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+</body>
+</html>

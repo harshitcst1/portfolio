@@ -1,521 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-Stack Developer | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom scrollbar for that 'dev' feel */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #111827; }
-        ::-webkit-scrollbar-thumb { background: #4B5563; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #6B7280; }
-        .hero-gradient {
-            background: linear-gradient(to right, #2563eb, #9333ea);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        html { scroll-behavior: smooth; }
-
-        /* Custom cursor (only for devices that support hover/pointer) */
-        @media (hover: hover) and (pointer: fine) {
-            html { cursor: none; }
-            #custom-cursor, #custom-cursor-follower {
-                position: fixed;
-                top: 0;
-                left: 0;
-                transform: translate(-50%, -50%);
-                pointer-events: none;
-                z-index: 9999;
-                mix-blend-mode: normal;
-                transition: transform .12s ease, background .12s ease, opacity .12s ease;
-                opacity: 0.98;
-            }
-            /* inner dot */
-            #custom-cursor {
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background: #fff;
-                box-shadow: 0 0 0 6px rgba(255,255,255,0.03), 0 0 8px rgba(59,130,246,0.08);
-            }
-            /* outer circle */
-            #custom-cursor-follower {
-                width: 56px;
-                height: 56px;
-                border-radius: 50%;
-                background: rgba(59,130,246,0.04);
-                border: 1px solid rgba(99,102,241,0.12);
-                transition: transform .18s cubic-bezier(.2,.9,.3,1), background .18s ease;
-            }
-            body.cursor-hover #custom-cursor { transform: translate(-50%, -50%) scale(1.15); background: #60a5fa; }
-            body.cursor-hover #custom-cursor-follower { transform: translate(-50%, -50%) scale(1.08); background: rgba(96,165,250,0.12); }
-        }
-        /* Tech carousel */
-        .tech-carousel { overflow: hidden; }
-        .tech-track { display: flex; gap: 1rem; align-items: center; will-change: transform; }
-        .tech-item { flex: 0 0 auto; width: 96px; height: 96px; border-radius: 12px; display:flex;align-items:center;justify-content:center; box-shadow: 0 6px 18px rgba(2,6,23,0.6); background: transparent; transition: transform .18s ease, box-shadow .18s ease; padding:10px; }
-        .tech-item img { width: 56px; height: 56px; object-fit:contain; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35)); }
-        .tech-item:hover { transform: translateY(-6px) scale(1.05); box-shadow: 0 14px 34px rgba(2,6,23,0.7); }
-        .tech-label { font-size: .85rem; text-align:center; }
-        @keyframes tech-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .tech-track.loop { animation: tech-scroll 20s linear infinite; }
-        .tech-track.loop:hover { animation-play-state: paused; }
-        @media (prefers-reduced-motion: reduce) {
-            .tech-track.loop { animation: none; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harshit Mishra | Backend-Focused Full Stack Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+  </style>
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
-    <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0 font-bold text-xl tracking-tighter">
-                    HARSHIT<span class="text-blue-500">.</span>MISHRA
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#about" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#experience" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Backend Exp</a>
-                        <a href="#skills" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-                        <a href="#projects" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                    </div>
-                </div>
-                <div>
-                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all">Contact Me</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+<body class="bg-slate-950 text-slate-100 font-sans">
 
-<section id="about" class="scroll-mt-24 py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- NAVBAR -->
+<nav class="fixed w-full z-50 bg-slate-950/90 backdrop-blur border-b border-slate-800">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <div class="font-bold text-xl tracking-tight">
+      Harshit<span class="text-blue-500">.</span>
+    </div>
+    <div class="hidden md:flex gap-8 text-sm">
+      <a href="#about" class="hover:text-blue-400">About</a>
+      <a href="#process" class="hover:text-blue-400">Process</a>
+      <a href="#projects" class="hover:text-blue-400">Projects</a>
+      <a href="#contact" class="hover:text-blue-400">Contact</a>
+    </div>
+    <div class="flex gap-3">
+      <a href="https://github.com/harshitcst1" target="_blank"
+         class="px-4 py-2 border border-slate-700 rounded hover:border-blue-500 text-sm">
+        GitHub
+      </a>
+      <a href="/Resume.html" class="px-4 py-2 bg-blue-600 rounded text-sm font-semibold hover:bg-blue-700">
+        Resume
+      </a>
+    </div>
+  </div>
+</nav>
 
-        <div class="max-w-4xl">
-            <div class="flex flex-wrap gap-3 mb-6">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono">
-                    <span class="relative flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                    </span>
-                    BACKEND ARCHITECTURE COMPLETED
-                </div>
-                <div class="inline-flex items-center px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-mono">
-                    🎓 B.Sc. IT
-                </div>
-            </div>
-            
-            <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight mb-6 leading-tight">
-                I build <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">production-ready</span><br>
-                backend systems.
-            </h1>
-            
-            <p class="text-xl text-slate-400 max-w-2xl mb-10 leading-relaxed">
-                Full-Stack Developer with a <strong>B.Sc. IT</strong> background. I specialize in building and deploying <strong>Laravel applications</strong>. My focus is moving beyond theory to ship structured, maintainable backend systems that solve real business problems.
-            </p>
+<!-- HERO -->
+<section id="about" class="pt-32 pb-24 max-w-6xl mx-auto px-6">
+  <div class="max-w-3xl">
+    <span class="inline-block mb-4 px-3 py-1 text-xs font-mono bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full">
+      PRODUCTION PROJECTS LIVE
+    </span>
 
-            <div class="flex gap-4">
-                <a href="#projects" class="bg-white text-slate-900 px-8 py-3 rounded font-bold hover:bg-slate-200 transition-colors">
-                    View Live Deployments
-                </a>
-                <a href="#architecture" class="border border-slate-700 text-slate-300 px-8 py-3 rounded font-medium hover:border-brand-500 hover:text-white transition-all">
-                    See How I Code
-                </a>
-            </div>
-        </div>
-    </section>
- 
+    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+      I build Laravel backends that<br/>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+        power real businesses.
+      </span>
+    </h1>
 
-    <section id="experience" class="py-20 bg-gray-800/50 border-y border-gray-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-10 flex items-center">
-                <span class="text-blue-500 mr-3">⚙️</span> Backend Experience
-            </h2>
-            <div class="bg-gray-900 border border-gray-700 rounded-lg p-8 shadow-xl">
-                <ul class="space-y-4">
-                    <li class="flex items-start">
-                        <svg class="h-6 w-6 text-green-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span class="text-lg text-gray-300">Designed and implemented Laravel backend from scratch.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="h-6 w-6 text-green-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span class="text-lg text-gray-300">Built REST-style routes and controllers for scalable architecture.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="h-6 w-6 text-green-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span class="text-lg text-gray-300">Connected frontend with dynamic backend data using MVC principles.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="h-6 w-6 text-green-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span class="text-lg text-gray-300">Deployed live backend with production configuration and environment management.</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <p class="text-lg text-slate-400 leading-relaxed mb-10">
+      I’m a B.Sc IT student and backend-focused full-stack developer.
+      I design, build, and deploy real Laravel applications used by actual clients —
+      not demo projects. I care about clean architecture, scalability, and long-term maintainability.
+    </p>
 
-    <section id="skills" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-4">Technical Stack</h2>
-        <p class="text-gray-400 mb-8 max-w-2xl">A snapshot of my primary strengths — tools I use daily and the architecture patterns I prefer.</p>
+    <div class="flex gap-4">
+      <a href="#projects"
+         class="px-8 py-3 bg-white text-slate-900 font-bold rounded hover:bg-slate-200">
+        View Live Work
+      </a>
+      <a href="#process"
+         class="px-8 py-3 border border-slate-700 rounded hover:border-blue-500">
+        How I Work
+      </a>
+    </div>
+  </div>
+</section>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Backend Card -->
-            <div class="group relative p-6 bg-gradient-to-br from-gray-900/40 to-gray-900/20 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transform hover:-translate-y-1 transition-all">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <h3 class="text-lg font-semibold text-white">Backend</h3>
-                        <p class="text-sm text-gray-400 mt-1">Building APIs, services and app logic.</p>
-                    </div>
-                    <div class="text-blue-400 text-2xl">⚙️</div>
-                </div>
+<!-- PROCESS -->
+<section id="process" class="py-24 bg-slate-900/60 border-y border-slate-800">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-10">How I Build Backend Systems</h2>
 
-                <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">PHP</span>
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Laravel</span>
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">MVC</span>
-                </div>
+    <div class="grid md:grid-cols-2 gap-6 text-slate-300">
+      <div class="bg-slate-950 border border-slate-800 rounded-xl p-6">
+        ✔ Plan database schema before writing controllers  
+      </div>
+      <div class="bg-slate-950 border border-slate-800 rounded-xl p-6">
+        ✔ Follow strict MVC (clean controllers, reusable logic)
+      </div>
+      <div class="bg-slate-950 border border-slate-800 rounded-xl p-6">
+        ✔ Validate inputs, secure forms, handle edge cases
+      </div>
+      <div class="bg-slate-950 border border-slate-800 rounded-xl p-6">
+        ✔ Deploy with proper env separation & production config
+      </div>
+    </div>
+  </div>
+</section>
 
-                <div class="mt-4">
-                    <div class="text-xs text-gray-400 mb-1">Confidence</div>
-                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
-                        <div class="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full" style="width:90%"></div>
-                    </div>
-                </div>
-            </div>
+<!-- PROJECTS -->
+<section id="projects" class="py-24 max-w-6xl mx-auto px-6">
+  <h2 class="text-3xl font-bold mb-14">Production Case Studies</h2>
 
-            <!-- Database Card -->
-            <div class="group relative p-6 bg-gradient-to-br from-gray-900/40 to-gray-900/20 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transform hover:-translate-y-1 transition-all">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <h3 class="text-lg font-semibold text-white">Database</h3>
-                        <p class="text-sm text-gray-400 mt-1">Schema design, migrations and performance.</p>
-                    </div>
-                    <div class="text-green-400 text-2xl">🗄️</div>
-                </div>
+  <div class="grid lg:grid-cols-2 gap-10">
 
-                <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">MySQL</span>
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Migrations</span>
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Indexes</span>
-                </div>
+    <!-- PROJECT 1 -->
+    <div class="bg-slate-900 border border-slate-800 rounded-xl p-8 hover:border-blue-500 transition">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-2xl font-bold">Maeind</h3>
+        <span class="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">
+          LIVE
+        </span>
+      </div>
 
-                <div class="mt-4">
-                    <div class="text-xs text-gray-400 mb-1">Confidence</div>
-                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
-                        <div class="bg-gradient-to-r from-green-400 to-emerald-400 h-2 rounded-full" style="width:85%"></div>
-                    </div>
-                </div>
-            </div>
+      <p class="text-sm text-blue-400 mb-4 font-mono">Role: Backend Developer</p>
 
-            <!-- DevOps Card -->
-            <div class="group relative p-6 bg-gradient-to-br from-gray-900/40 to-gray-900/20 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transform hover:-translate-y-1 transition-all">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <h3 class="text-lg font-semibold text-white">DevOps & Infra</h3>
-                        <p class="text-sm text-gray-400 mt-1">Deployment, containers and environment management.</p>
-                    </div>
-                    <div class="text-indigo-400 text-2xl">🚀</div>
-                </div>
+      <p class="text-slate-300 mb-4">
+        <strong>Problem:</strong> Client needed a fast, editable business website without
+        depending on developers for every content change.
+      </p>
 
-                <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Docker</span>
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">GitHub Actions</span>
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">NGINX</span>
-                </div>
+      <p class="text-slate-300 mb-4">
+        <strong>Solution:</strong> Built a Laravel backend with structured routing,
+        dynamic content management, and scalable database design.
+      </p>
 
-                <div class="mt-4">
-                    <div class="text-xs text-gray-400 mb-1">Confidence</div>
-                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
-                        <div class="bg-gradient-to-r from-indigo-500 to-violet-500 h-2 rounded-full" style="width:75%"></div>
-                    </div>
-                </div>
-            </div>
+      <p class="text-slate-300 mb-6">
+        <strong>My Work:</strong> Database schema, backend architecture, controllers,
+        frontend integration, and production deployment.
+      </p>
 
-            <!-- API & Integration Card -->
-            <div class="group relative p-6 bg-gradient-to-br from-gray-900/40 to-gray-900/20 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transform hover:-translate-y-1 transition-all">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <h3 class="text-lg font-semibold text-white">APIs & Integration</h3>
-                        <p class="text-sm text-gray-400 mt-1">RESTful endpoints, auth and external services.</p>
-                    </div>
-                    <div class="text-yellow-400 text-2xl">🔗</div>
-                </div>
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span class="px-3 py-1 bg-slate-800 rounded-full text-xs">Laravel (Production)</span>
+        <span class="px-3 py-1 bg-slate-800 rounded-full text-xs">MySQL</span>
+        <span class="px-3 py-1 bg-slate-800 rounded-full text-xs">Deployment</span>
+      </div>
 
-                <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">REST</span>
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">OAuth</span>
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Webhooks</span>
-                </div>
+      <a href="https://www.maeind.com" target="_blank"
+         class="text-blue-400 hover:text-white font-semibold">
+        Visit Live Site →
+      </a>
+    </div>
 
-                <div class="mt-4">
-                    <div class="text-xs text-gray-400 mb-1">Confidence</div>
-                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
-                        <div class="bg-gradient-to-r from-yellow-400 to-orange-400 h-2 rounded-full" style="width:88%"></div>
-                    </div>
-                </div>
-            </div>
+    <!-- PROJECT 2 -->
+    <div class="bg-slate-900 border border-slate-800 rounded-xl p-8 hover:border-blue-500 transition">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-2xl font-bold">UniversalExportsBvn.in</h3>
+        <span class="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">
+          LIVE
+        </span>
+      </div>
 
-            <!-- Testing Card -->
-            <div class="group relative p-6 bg-gradient-to-br from-gray-900/40 to-gray-900/20 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transform hover:-translate-y-1 transition-all">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <h3 class="text-lg font-semibold text-white">Testing & QA</h3>
-                        <p class="text-sm text-gray-400 mt-1">Unit, feature and integration tests.</p>
-                    </div>
-                    <div class="text-red-400 text-2xl">✅</div>
-                </div>
+      <p class="text-sm text-blue-400 mb-4 font-mono">Role: Backend Developer</p>
 
-                <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">PHPUnit</span>
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Dusk</span>
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">CI</span>
-                </div>
+      <p class="text-slate-300 mb-4">
+        <strong>Problem:</strong> Export business required structured content handling
+        and enquiry management.
+      </p>
 
-                <div class="mt-4">
-                    <div class="text-xs text-gray-400 mb-1">Confidence</div>
-                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
-                        <div class="bg-gradient-to-r from-red-400 to-pink-400 h-2 rounded-full" style="width:70%"></div>
-                    </div>
-                </div>
-            </div>
+      <p class="text-slate-300 mb-4">
+        <strong>Solution:</strong> Designed backend logic using Laravel to manage
+        business data, enquiries, and scalable future expansion.
+      </p>
 
-            <!-- Tools Card -->
-            <div class="group relative p-6 bg-gradient-to-br from-gray-900/40 to-gray-900/20 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transform hover:-translate-y-1 transition-all">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <h3 class="text-lg font-semibold text-white">Tools</h3>
-                        <p class="text-sm text-gray-400 mt-1">Everyday tools that keep me productive.</p>
-                    </div>
-                    <div class="text-sky-400 text-2xl">🛠️</div>
-                </div>
+      <p class="text-slate-300 mb-6">
+        <strong>My Work:</strong> Backend logic, database design, content handling,
+        and deployment.
+      </p>
 
-                <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Git</span>
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">VSCode</span>
-                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Postman</span>
-                </div>
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span class="px-3 py-1 bg-slate-800 rounded-full text-xs">Laravel</span>
+        <span class="px-3 py-1 bg-slate-800 rounded-full text-xs">Backend Logic</span>
+        <span class="px-3 py-1 bg-slate-800 rounded-full text-xs">Scalable Design</span>
+      </div>
 
-                <div class="mt-4">
-                    <div class="text-xs text-gray-400 mb-1">Confidence</div>
-                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
-                        <div class="bg-gradient-to-r from-sky-400 to-cyan-400 h-2 rounded-full" style="width:82%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <a href="https://www.universalexportsbvn.in" target="_blank"
+         class="text-blue-400 hover:text-white font-semibold">
+        Visit Live Site →
+      </a>
+    </div>
 
-    <section id="tech-carousel" class="py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-xl font-semibold text-white mb-6">Tech I Use</h3>
+  </div>
+</section>
 
-            <div class="tech-carousel bg-gray-900/40 p-4 rounded-lg border border-gray-800">
-                <div class="tech-track loop" aria-hidden="true">
-                    <div class="tech-item"><img src="assets/html.svg" alt="HTML5 logo"></div>
-                    <div class="tech-item"><img src="assets/css.svg" alt="CSS3 logo"></div>
-                    <div class="tech-item"><img src="assets/js.svg" alt="JavaScript logo"></div>
-                    <div class="tech-item"><img src="assets/php.svg" alt="PHP logo"></div>
-                    <div class="tech-item"><img src="assets/laravel.svg" alt="Laravel logo"></div>
-                    <div class="tech-item"><img src="assets/tailwind.svg" alt="Tailwind CSS logo"></div>
-                    <div class="tech-item"><img src="assets/superbase.svg" alt="Supabase logo"></div>
-                    <div class="tech-item"><img src="assets/react.svg" alt="React logo"></div>
-                    <div class="tech-item"><img src="assets/git.svg" alt="Git logo"></div>
-                    <div class="tech-item"><img src="assets/docker.svg" alt="Docker logo"></div>
+<!-- CONTACT -->
+<section id="contact" class="py-24 bg-slate-900/60 border-t border-slate-800">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-6">Contact</h2>
+    <p class="text-slate-400 mb-10">
+      Open to internships, junior backend roles, and freelance backend work.
+    </p>
 
-                    <!-- duplicate for seamless loop -->
-                    <div class="tech-item"><img src="assets/html.svg" alt="HTML5 logo"></div>
-                    <div class="tech-item"><img src="assets/css.svg" alt="CSS3 logo"></div>
-                    <div class="tech-item"><img src="assets/js.svg" alt="JavaScript logo"></div>
-                    <div class="tech-item"><img src="assets/php.svg" alt="PHP logo"></div>
-                    <div class="tech-item"><img src="assets/laravel.svg" alt="Laravel logo"></div>
-                    <div class="tech-item"><img src="assets/tailwind.svg" alt="Tailwind CSS logo"></div>
-                    <div class="tech-item"><img src="assets/superbase.svg" alt="Supabase logo"></div>
-                    <div class="tech-item"><img src="assets/react.svg" alt="React logo"></div>
-                    <div class="tech-item"><img src="assets/git.svg" alt="Git logo"></div>
-                    <div class="tech-item"><img src="assets/docker.svg" alt="Docker logo"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="space-y-4">
+      <div class="bg-slate-950 border border-slate-800 rounded-lg p-4">
+        📧 <strong>Email:</strong> hm9011822@gmail.com
+      </div>
+      <div class="bg-slate-950 border border-slate-800 rounded-lg p-4">
+        📞 <strong>Phone:</strong> +91 9173815758
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="projects" class="py-20 bg-gray-900 border-t border-gray-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-12">Live Production Projects</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-                <div class="group relative bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-2xl font-bold text-white">Maeind</h3>
-                            <span class="bg-green-900 text-green-300 text-xs font-bold px-2 py-1 rounded uppercase">Live & Deployed</span>
-                        </div>
-                        <p class="text-blue-400 font-mono text-sm mb-4">Role: Back-end Developer</p>
-                        <p class="text-gray-300 mb-6 leading-relaxed">
-                            Full-Stack business website featuring dynamic data handling and database-driven content. 
-                            <span class="block mt-2 font-semibold text-white">Developed complete backend architecture including routes, controllers, database schema, and deployment configuration.</span>
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-gray-900 rounded-full text-xs text-gray-400">Laravel</span>
-                            <span class="px-3 py-1 bg-gray-900 rounded-full text-xs text-gray-400">MySQL</span>
-                            <span class="px-3 py-1 bg-gray-900 rounded-full text-xs text-gray-400">Production</span>
-                        </div>
-                        <a href="https://www.maeind.com/" class="inline-flex items-center text-blue-400 hover:text-white transition-colors">
-                            View Live Project <span class="ml-2">→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="group relative bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-2xl font-bold text-white">UniversalExportsBvn.in</h3>
-                            <span class="bg-green-900 text-green-300 text-xs font-bold px-2 py-1 rounded uppercase">Live Production</span>
-                        </div>
-                        <p class="text-blue-400 font-mono text-sm mb-4">Role: Back-end Developer</p>
-                        <p class="text-gray-300 mb-6 leading-relaxed">
-                            Export business platform. Implemented backend logic to manage business content, enquiries, and scalable data structure using Laravel.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-gray-900 rounded-full text-xs text-gray-400">Laravel</span>
-                            <span class="px-3 py-1 bg-gray-900 rounded-full text-xs text-gray-400">Backend Logic</span>
-                            <span class="px-3 py-1 bg-gray-900 rounded-full text-xs text-gray-400">Scalable Data</span>
-                        </div>
-                        <a href="https://www.universalexportsbvn.in/" class="inline-flex items-center text-blue-400 hover:text-white transition-colors">
-                            View Live Project <span class="ml-2">→</span>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 bg-gray-800/40 border-t border-gray-800">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-6">Contact</h2>
-            <p class="text-gray-300 mb-6">I'd love to hear from you. Reach out via email or phone — or copy them to your clipboard:</p>
-
-            <div class="flex flex-col sm:flex-row sm:items-start gap-4">
-                <div class="flex-1 flex items-center justify-between gap-4 bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-100 px-4 py-3 rounded-lg">
-                    <a href="mailto:hm9011822@gmail.com" class="flex items-center gap-3 flex-1" aria-label="Send email to hm9011822@gmail.com">
-                        <span class="text-xl">📧</span>
-                        <span class="ml-2 font-medium">hm9011822@gmail.com</span>
-                    </a>
-                    <div class="flex items-center gap-2">
-                        <button type="button" data-copy="hm9011822@gmail.com" class="copy-btn inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-200 px-3 py-2 rounded-md text-sm" aria-label="Copy email">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2"/></svg>
-                            Copy
-                        </button>
-                        <span class="copy-status text-green-400 text-sm opacity-0 transition-opacity" aria-hidden="true">Copied!</span>
-                    </div>
-                </div>
-
-                <div class="flex-1 flex items-center justify-between gap-4 bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-100 px-4 py-3 rounded-lg">
-                    <a href="tel:+919173815758" class="flex items-center gap-3 flex-1" aria-label="Call +91 9173815758">
-                        <span class="text-xl">📞</span>
-                        <span class="ml-2 font-medium">+91 9173815758</span>
-                    </a>
-                    <div class="flex items-center gap-2">
-                        <button type="button" data-copy="+91 9173815758" class="copy-btn inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-200 px-3 py-2 rounded-md text-sm" aria-label="Copy phone number">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l3 7-1.4 2.8A11.05 11.05 0 0014.2 21l2.8-1.4L20 21v2a1 1 0 01-1 1A19 19 0 013 5a1 1 0 011-1z"/></svg>
-                            Copy
-                        </button>
-                        <span class="copy-status text-green-400 text-sm opacity-0 transition-opacity" aria-hidden="true">Copied!</span>
-                    </div>
-                </div>
-            </div>
-
-            <div id="copy-live" aria-live="polite" class="sr-only"></div>
-        </div>
-    </section>
-
-    <footer class="py-10 border-t border-gray-800 text-center text-gray-500 text-sm">
-        <p>&copy; 2024 Your Name. Built with Laravel Architecture Principles.</p>
-    </footer>
-
-    <!-- custom cursor elements (inserted for non-touch devices) -->
-    <div id="custom-cursor" aria-hidden="true"></div>
-    <div id="custom-cursor-follower" aria-hidden="true"></div>
-
-    <script>
-        (function(){
-            const copyButtons = document.querySelectorAll('[data-copy]');
-            copyButtons.forEach(btn => {
-                btn.addEventListener('click', async () => {
-                    const text = btn.getAttribute('data-copy');
-                    try {
-                        await navigator.clipboard.writeText(text);
-                        const status = btn.parentElement.querySelector('.copy-status');
-                        if (status) {
-                            status.classList.remove('opacity-0');
-                            setTimeout(() => status.classList.add('opacity-0'), 2000);
-                        }
-                        const live = document.getElementById('copy-live');
-                        if (live) {
-                            live.textContent = 'Copied to clipboard';
-                            setTimeout(() => live.textContent = '', 2000);
-                        }
-                    } catch (err) {
-                        console.error('Copy failed', err);
-                    }
-                });
-            });
-        })();
-    </script>
-
-    <script>
-        (function(){
-            if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-            const cursor = document.getElementById('custom-cursor');
-            const follower = document.getElementById('custom-cursor-follower');
-            if (!cursor || !follower) return;
-
-            const followerRect = { w: 56, h: 56 };
-            const cursorRect = { w: 8, h: 8 };
-            const followerRadius = followerRect.w / 2;
-            const allowedInnerRadius = followerRadius - (cursorRect.w / 2) - 4; // padding
-
-            let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
-            let posX = mouseX, posY = mouseY;
-
-            // position follower and cursor using left/top so CSS translate(-50%,-50%) keeps them centered
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-            });
-
-            function animate() {
-                // smooth follower to mouse
-                posX += (mouseX - posX) * 0.16;
-                posY += (mouseY - posY) * 0.16;
-
-                follower.style.left = posX + 'px';
-                follower.style.top = posY + 'px';
-
-                // compute inner dot offset toward the actual mouse position but constrained inside circle
-                const dx = mouseX - posX;
-                const dy = mouseY - posY;
-                const dist = Math.hypot(dx, dy) || 0.001;
-                const max = allowedInnerRadius;
-                const offsetDist = Math.min(dist, max);
-                const offsetX = (dx / dist) * offsetDist;
-                const offsetY = (dy / dist) * offsetDist;
-
-                cursor.style.left = (posX + offsetX) + 'px';
-                cursor.style.top = (posY + offsetY) + 'px';
-
-                requestAnimationFrame(animate);
-            }
-            requestAnimationFrame(animate);
-
-            const interactive = 'a, button, input, textarea, select, [role="button"], [data-copy]';
-            document.querySelectorAll(interactive).forEach(el => {
-                el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-                el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-            });
-        })();
-    </script>
+<!-- FOOTER -->
+<footer class="py-10 text-center text-slate-500 text-sm border-t border-slate-800">
+  © 2025 Harshit Mishra — Backend-Focused Full Stack Developer
+</footer>
 
 </body>
 </html>
