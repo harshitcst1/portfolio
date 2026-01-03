@@ -52,6 +52,19 @@
             body.cursor-hover #custom-cursor { transform: translate(-50%, -50%) scale(1.15); background: #60a5fa; }
             body.cursor-hover #custom-cursor-follower { transform: translate(-50%, -50%) scale(1.08); background: rgba(96,165,250,0.12); }
         }
+        /* Tech carousel */
+        .tech-carousel { overflow: hidden; }
+        .tech-track { display: flex; gap: 1rem; align-items: center; will-change: transform; }
+        .tech-item { flex: 0 0 auto; width: 96px; height: 96px; border-radius: 12px; display:flex;align-items:center;justify-content:center; box-shadow: 0 6px 18px rgba(2,6,23,0.6); background: transparent; transition: transform .18s ease, box-shadow .18s ease; padding:10px; }
+        .tech-item img { width: 56px; height: 56px; object-fit:contain; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35)); }
+        .tech-item:hover { transform: translateY(-6px) scale(1.05); box-shadow: 0 14px 34px rgba(2,6,23,0.7); }
+        .tech-label { font-size: .85rem; text-align:center; }
+        @keyframes tech-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .tech-track.loop { animation: tech-scroll 20s linear infinite; }
+        .tech-track.loop:hover { animation-play-state: paused; }
+        @media (prefers-reduced-motion: reduce) {
+            .tech-track.loop { animation: none; }
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans antialiased selection:bg-blue-600 selection:text-white">
@@ -143,39 +156,186 @@
     </section>
 
     <section id="skills" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-12">Technical Stack</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <div class="p-6 border border-gray-800 rounded-lg hover:border-blue-500/50 transition-colors">
-                <h3 class="text-xl font-semibold text-blue-400 mb-4">Backend Architecture</h3>
-                <ul class="space-y-2 text-gray-400">
-                    <li>PHP</li>
-                    <li class="text-white font-medium">Laravel (Backend Completed)</li>
-                    <li>REST APIs</li>
-                    <li>MVC Architecture</li>
-                    <li>Authentication & Validation</li>
-                </ul>
+        <h2 class="text-3xl font-bold mb-4">Technical Stack</h2>
+        <p class="text-gray-400 mb-8 max-w-2xl">A snapshot of my primary strengths — tools I use daily and the architecture patterns I prefer.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Backend Card -->
+            <div class="group relative p-6 bg-gradient-to-br from-gray-900/40 to-gray-900/20 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transform hover:-translate-y-1 transition-all">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Backend</h3>
+                        <p class="text-sm text-gray-400 mt-1">Building APIs, services and app logic.</p>
+                    </div>
+                    <div class="text-blue-400 text-2xl">⚙️</div>
+                </div>
+
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">PHP</span>
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Laravel</span>
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">MVC</span>
+                </div>
+
+                <div class="mt-4">
+                    <div class="text-xs text-gray-400 mb-1">Confidence</div>
+                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full" style="width:90%"></div>
+                    </div>
+                </div>
             </div>
 
-            <div class="p-6 border border-gray-800 rounded-lg hover:border-blue-500/50 transition-colors">
-                <h3 class="text-xl font-semibold text-blue-400 mb-4">Database Management</h3>
-                <ul class="space-y-2 text-gray-400">
-                    <li class="text-white font-medium">MySQL</li>
-                    <li>Migrations & Seeders</li>
-                    <li>Relationships (One-to-Many)</li>
-                    <li>Schema Design</li>
-                    <li>Data Integrity</li>
-                </ul>
+            <!-- Database Card -->
+            <div class="group relative p-6 bg-gradient-to-br from-gray-900/40 to-gray-900/20 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transform hover:-translate-y-1 transition-all">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Database</h3>
+                        <p class="text-sm text-gray-400 mt-1">Schema design, migrations and performance.</p>
+                    </div>
+                    <div class="text-green-400 text-2xl">🗄️</div>
+                </div>
+
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">MySQL</span>
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Migrations</span>
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Indexes</span>
+                </div>
+
+                <div class="mt-4">
+                    <div class="text-xs text-gray-400 mb-1">Confidence</div>
+                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+                        <div class="bg-gradient-to-r from-green-400 to-emerald-400 h-2 rounded-full" style="width:85%"></div>
+                    </div>
+                </div>
             </div>
 
-            <div class="p-6 border border-gray-800 rounded-lg hover:border-blue-500/50 transition-colors">
-                <h3 class="text-xl font-semibold text-blue-400 mb-4">DevOps & Tools</h3>
-                <ul class="space-y-2 text-gray-400">
-                    <li>Git & GitHub</li>
-                    <li>Environment Config (.env)</li>
-                </ul>
+            <!-- DevOps Card -->
+            <div class="group relative p-6 bg-gradient-to-br from-gray-900/40 to-gray-900/20 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transform hover:-translate-y-1 transition-all">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">DevOps & Infra</h3>
+                        <p class="text-sm text-gray-400 mt-1">Deployment, containers and environment management.</p>
+                    </div>
+                    <div class="text-indigo-400 text-2xl">🚀</div>
+                </div>
+
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Docker</span>
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">GitHub Actions</span>
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">NGINX</span>
+                </div>
+
+                <div class="mt-4">
+                    <div class="text-xs text-gray-400 mb-1">Confidence</div>
+                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+                        <div class="bg-gradient-to-r from-indigo-500 to-violet-500 h-2 rounded-full" style="width:75%"></div>
+                    </div>
+                </div>
             </div>
 
+            <!-- API & Integration Card -->
+            <div class="group relative p-6 bg-gradient-to-br from-gray-900/40 to-gray-900/20 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transform hover:-translate-y-1 transition-all">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">APIs & Integration</h3>
+                        <p class="text-sm text-gray-400 mt-1">RESTful endpoints, auth and external services.</p>
+                    </div>
+                    <div class="text-yellow-400 text-2xl">🔗</div>
+                </div>
+
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">REST</span>
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">OAuth</span>
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Webhooks</span>
+                </div>
+
+                <div class="mt-4">
+                    <div class="text-xs text-gray-400 mb-1">Confidence</div>
+                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+                        <div class="bg-gradient-to-r from-yellow-400 to-orange-400 h-2 rounded-full" style="width:88%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testing Card -->
+            <div class="group relative p-6 bg-gradient-to-br from-gray-900/40 to-gray-900/20 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transform hover:-translate-y-1 transition-all">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Testing & QA</h3>
+                        <p class="text-sm text-gray-400 mt-1">Unit, feature and integration tests.</p>
+                    </div>
+                    <div class="text-red-400 text-2xl">✅</div>
+                </div>
+
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">PHPUnit</span>
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Dusk</span>
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">CI</span>
+                </div>
+
+                <div class="mt-4">
+                    <div class="text-xs text-gray-400 mb-1">Confidence</div>
+                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+                        <div class="bg-gradient-to-r from-red-400 to-pink-400 h-2 rounded-full" style="width:70%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools Card -->
+            <div class="group relative p-6 bg-gradient-to-br from-gray-900/40 to-gray-900/20 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transform hover:-translate-y-1 transition-all">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Tools</h3>
+                        <p class="text-sm text-gray-400 mt-1">Everyday tools that keep me productive.</p>
+                    </div>
+                    <div class="text-sky-400 text-2xl">🛠️</div>
+                </div>
+
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Git</span>
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">VSCode</span>
+                    <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">Postman</span>
+                </div>
+
+                <div class="mt-4">
+                    <div class="text-xs text-gray-400 mb-1">Confidence</div>
+                    <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+                        <div class="bg-gradient-to-r from-sky-400 to-cyan-400 h-2 rounded-full" style="width:82%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-carousel" class="py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-xl font-semibold text-white mb-6">Tech I Use</h3>
+
+            <div class="tech-carousel bg-gray-900/40 p-4 rounded-lg border border-gray-800">
+                <div class="tech-track loop" aria-hidden="true">
+                    <div class="tech-item"><img src="assets/html.svg" alt="HTML5 logo"></div>
+                    <div class="tech-item"><img src="assets/css.svg" alt="CSS3 logo"></div>
+                    <div class="tech-item"><img src="assets/js.svg" alt="JavaScript logo"></div>
+                    <div class="tech-item"><img src="assets/php.svg" alt="PHP logo"></div>
+                    <div class="tech-item"><img src="assets/laravel.svg" alt="Laravel logo"></div>
+                    <div class="tech-item"><img src="assets/tailwind.svg" alt="Tailwind CSS logo"></div>
+                    <div class="tech-item"><img src="assets/superbase.svg" alt="Supabase logo"></div>
+                    <div class="tech-item"><img src="assets/react.svg" alt="React logo"></div>
+                    <div class="tech-item"><img src="assets/git.svg" alt="Git logo"></div>
+                    <div class="tech-item"><img src="assets/docker.svg" alt="Docker logo"></div>
+
+                    <!-- duplicate for seamless loop -->
+                    <div class="tech-item"><img src="assets/html.svg" alt="HTML5 logo"></div>
+                    <div class="tech-item"><img src="assets/css.svg" alt="CSS3 logo"></div>
+                    <div class="tech-item"><img src="assets/js.svg" alt="JavaScript logo"></div>
+                    <div class="tech-item"><img src="assets/php.svg" alt="PHP logo"></div>
+                    <div class="tech-item"><img src="assets/laravel.svg" alt="Laravel logo"></div>
+                    <div class="tech-item"><img src="assets/tailwind.svg" alt="Tailwind CSS logo"></div>
+                    <div class="tech-item"><img src="assets/superbase.svg" alt="Supabase logo"></div>
+                    <div class="tech-item"><img src="assets/react.svg" alt="React logo"></div>
+                    <div class="tech-item"><img src="assets/git.svg" alt="Git logo"></div>
+                    <div class="tech-item"><img src="assets/docker.svg" alt="Docker logo"></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -190,7 +350,7 @@
                             <h3 class="text-2xl font-bold text-white">Maeind</h3>
                             <span class="bg-green-900 text-green-300 text-xs font-bold px-2 py-1 rounded uppercase">Live & Deployed</span>
                         </div>
-                        <p class="text-blue-400 font-mono text-sm mb-4">Role: Full-Stack Developer</p>
+                        <p class="text-blue-400 font-mono text-sm mb-4">Role: Back-end Developer</p>
                         <p class="text-gray-300 mb-6 leading-relaxed">
                             Full-Stack business website featuring dynamic data handling and database-driven content. 
                             <span class="block mt-2 font-semibold text-white">Developed complete backend architecture including routes, controllers, database schema, and deployment configuration.</span>
@@ -212,7 +372,7 @@
                             <h3 class="text-2xl font-bold text-white">UniversalExportsBvn.in</h3>
                             <span class="bg-green-900 text-green-300 text-xs font-bold px-2 py-1 rounded uppercase">Live Production</span>
                         </div>
-                        <p class="text-blue-400 font-mono text-sm mb-4">Role: Full-Stack Developer</p>
+                        <p class="text-blue-400 font-mono text-sm mb-4">Role: Back-end Developer</p>
                         <p class="text-gray-300 mb-6 leading-relaxed">
                             Export business platform. Implemented backend logic to manage business content, enquiries, and scalable data structure using Laravel.
                         </p>
